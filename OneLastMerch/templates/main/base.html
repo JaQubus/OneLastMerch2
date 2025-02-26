@@ -1,0 +1,16 @@
+{% load static %}
+
+<!doctype html>
+<html>
+    <head>
+        <title>OneLastMerch</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        {% include "main/header.html" %}
+        <main class="main">
+            {% block content %}
+            {% endblock content %}
+        </main>
+        {% include "main/footer.html" %}
+    </body>
