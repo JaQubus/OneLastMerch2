@@ -1,6 +1,7 @@
 {% extends "main/base.html" %}
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
 <section class="form-container">
     <form method="POST" action="{% url 'register' %}" class="form">
         <h2>Register</h2>

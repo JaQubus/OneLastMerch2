@@ -1,3 +1,19 @@
-{% block footer %}
-<footer>Footer</footer>
-{% endblock footer %}
+<footer class="footer">
+    <ul class="footer-list">
+        <li>
+            <ul>
+                <li class="list-header">COMPANY</li>
+                {% include "main/headers.html" %}
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li class="list-header">PRODUCTS</li>
+                <li><a href="/shop/shirt">SHIRTS</a></li>
+                <li><a href="/shop/hoodie">HOODIES</a></li>
+                <li><a href="/shop/cap">CAPS</a></li>
+                <li><a href="/shop/accessory">ACCESSORIES</a></li>
+            </ul>
+        </li>
+    </ul>
+</footer>

@@ -1,2 +1,6 @@
 .venv*
-.env
+.env*
+*.pyc
+.idea/
+.vscode/
+./OneLastMerch/db.sqlite3

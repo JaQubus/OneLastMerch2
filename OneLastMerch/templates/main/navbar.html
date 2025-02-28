@@ -1,0 +1,14 @@
+{% load static %}
+
+<nav class="navbar">
+    <a href="/"
+        ><img
+            src="{% static 'icons/Logo.webp' %}"
+            alt="Logo of OneLastMerch"
+            id="logo"
+        />
+    </a>
+    <ul class="navbar-list">
+        {% include "main/headers.html" with user=user %}
+    </ul>
+</nav>
