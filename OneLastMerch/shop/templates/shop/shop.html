@@ -6,7 +6,7 @@
     {% include "shop/filter-bar.html" with form=form %}
     <div class="items-container">
         {% for item in items %}
-            <link rel="stylesheet" href="{% static 'ui/css/shop.css' %}">
+            <link rel="stylesheet" href="{% static 'shop/css/shop.css' %}">
                 <div class="item">
                     {% if item.image %}
                         <img src="{% static 'items_images/'|add:item.image %}" alt="{{ item.title }}" class="item-image">

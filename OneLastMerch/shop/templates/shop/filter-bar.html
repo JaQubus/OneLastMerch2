@@ -1,8 +1,8 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'ui/css/filter.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/filters.css' %}" />
 <link rel="stylesheet" href="{% static 'css/form.css' %}" />
-<form method="POST" action="{% url 'shop' %}" class="form">
+<form method="POST" action="{% url 'shop_filters' %}" class="form">
     {% csrf_token %}
     {% for field in form %}
         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
