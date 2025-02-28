@@ -34,6 +34,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'olm_auth',
     'OneLastMerch',
+    'shop',
+    'ui_ux',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
