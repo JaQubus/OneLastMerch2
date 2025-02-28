@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <section class="container">
+        <h1>Welcome to OneLast Merch!</h1>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <p class="section-text">Discover the ultimate collection of exclusive "OneLast" merchandise! From stylish apparel to unique accessories, we have everything you need to showcase your love for the brand.</p>
+            <p><a href="/shop" class="cta">Start shopping now!</a></p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <p class="section-text">Looking for the story behind OneLast? Our brand is all about uniqueness, quality, and creating memorable products that speak to you. Learn more about us and how we got started.</p>
+            <p><a href="/about-us" class="cta">Learn about us</a></p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <p class="section-text">Got questions or need assistance? Our team is always here to help! Reach out to us, and we’ll make sure to provide you with the best service possible.</p>
+            <p><a href="/contact" class="cta">Contact us today</a></p>
+        </div>
+        {% if user.is_authenticated %}
+
+        {% else %}
+            <!-- Section 4 -->
+            <div class="section">
+                <p class="section-text">Already a member? Log in to your account to access exclusive offers, track your orders, and stay up-to-date with the latest "OneLast" products!</p>
+                <p><a href="/auth/login" class="cta">Login to your account</a></p>
+            </div>
+        {% endif %}
+    </section>
+{% endblock content %}

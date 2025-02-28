@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout
 from .forms import RegisterForm, LoginForm
 
-def register(request):
+
+def olm_register(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -13,7 +14,8 @@ def register(request):
         form = RegisterForm()
     return render(request, "olm_auth/register.html", {"form": form})
 
-def login(request):
+
+def olm_login(request):
     if request.method == "POST":
         form = LoginForm(request, data=request.POST)
         if form.is_valid():
@@ -24,6 +26,7 @@ def login(request):
         form = LoginForm()
     return render(request, "olm_auth/login.html", {"form": form})
 
-def logout(request):
+
+def olm_logout(request):
     logout(request)
     return redirect("login")
