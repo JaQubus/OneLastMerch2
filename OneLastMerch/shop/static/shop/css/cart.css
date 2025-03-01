@@ -1,0 +1,98 @@
+/* Styles only for the cart page */
+.cart-page h1 {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #7e57c2; /* Deep purple */
+    margin-bottom: 20px;
+}
+
+.cart-page ul {
+    list-style: none;
+    padding: 0;
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4; /* Light background */
+}
+
+.cart-page li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333333; /* Dark gray text */
+}
+
+.cart-page li:last-child {
+    border-bottom: none;
+}
+
+.cart-page img {
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cart-page img:hover {
+    transform: scale(1.05);
+}
+
+.cart-page a {
+    display: block;
+    text-align: center;
+    padding: 12px 25px;
+    background: #4db6ac; /* Light teal */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.cart-page a:hover {
+    background: #00796b; /* Darker teal on hover */
+    transform: scale(1.05);
+}
+
+/* Smooth hover transition for list items */
+.cart-page li:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.quantity-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd;
+}
+
+.remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.remove-btn:hover {
+    background-color: #cc0000;
+}

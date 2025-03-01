@@ -1,0 +1,30 @@
+.image-text-section {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    flex-direction: row;
+}
+
+.image-text-section img {
+    border-radius: 8px;
+    flex: 1 1 70%; /* Adjusted to take 50% of the container */
+    max-width: 70%; /* Ensure the image doesn't exceed its flex-basis */
+}
+
+.image-text-section .text {
+    flex: 1 1 30%;
+    max-width: 30%;
+    padding: 1rem;
+}
+
+.cta {
+    text-align: center;
+    margin: 2rem 0;
+}
+.cta a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #282c34;
+    color: white;
+    border-radius: 4px;
+}

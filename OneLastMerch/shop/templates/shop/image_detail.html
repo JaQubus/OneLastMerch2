@@ -9,6 +9,13 @@
         <img src="{% static 'items_images/'|add:item.image %}" alt="{{ item.title }}" class="item-image">
     {% endif %}
     <p>Price: ${{ item.price }}</p>
+
+    <!-- Add to Cart Form -->
+    <form action="{% url 'add_to_cart' item.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+    </form>
+
     <a href="{% url 'shop_main' %}">Back to items</a>
 </div>
 {% endblock content %}

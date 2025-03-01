@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="container">
+        <h1>Welcome to Your Account, {{ username }}!</h1>
+
+        <div class="section">
+            <p class="section-text">
+                <strong>Name:</strong> {{ username }}
+            </p>
+            <p class="section-text">
+                <strong>Email:</strong> {{ email }}
+            </p>
+        </div>
+
+        <div class="section">
+            <p class="section-text">
+                Want to update your password? It's quick and easy to stay secure. Head over to the change password page and set up a new one.
+            </p>
+            <p><a href="/auth/change-password" class="cta">Change Password</a></p>
+        </div>
+
+        <div class="section">
+            <p class="section-text">
+                Finished browsing? Log out of your account securely to ensure your details stay private.
+            </p>
+            <p><a href="/auth/logout" class="cta">Log Out</a></p>
+        </div>
+        <div class="section">
+            <p class="section-text">
+                Check your shopping cart
+            </p>
+            <p><a href="/shop/cart" class="cta">Your cart</a></p>
+        </div>
+{% endblock %}

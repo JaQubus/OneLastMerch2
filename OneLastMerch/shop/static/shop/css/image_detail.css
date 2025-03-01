@@ -51,6 +51,45 @@ a:hover {
     text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
 
+/* Add to Cart Button Styles */
+.add-to-cart-btn {
+    background: linear-gradient(145deg, #38bdf8, #0ea5e9);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(56, 191, 248, 0.3), 0 0 20px rgba(56, 191, 248, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Hover Effect */
+.add-to-cart-btn:hover {
+    background: linear-gradient(145deg, #0ea5e9, #38bdf8);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(56, 191, 248, 0.4), 0 0 30px rgba(56, 191, 248, 0.7);
+}
+
+/* Active Effect (when clicked) */
+.add-to-cart-btn:active {
+    background: #0ea5e9;
+    box-shadow: 0 3px 6px rgba(56, 191, 248, 0.4), 0 0 15px rgba(56, 191, 248, 0.6);
+    transform: scale(0.98);
+}
+
+/* Focus Effect */
+.add-to-cart-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(56, 191, 248, 0.5);
+}
+
+
 /* Media Queries */
 @media (max-width: 600px) {
     .image-detail-container {

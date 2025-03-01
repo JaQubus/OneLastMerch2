@@ -1,0 +1,31 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'ui/css/about-us.css' %}">
+    <h2>What We Do</h2>
+    <div class="image-text-section">
+        <img src="{% static 'page_images/OneLast.png' %}" alt="An image of stylish OneLastMerch apparel and accessories.">
+        <div class="text">
+            <ul>
+                <li><strong>Apparel</strong>: Stylish and comfortable clothing inspired by the themes of OneLast.</li>
+                <li><strong>Accessories</strong>: Cool collectibles and functional items that let you carry a piece of the platform wherever you go.</li>
+                <li><strong>Exclusive Drops</strong>: Limited-edition items tied to the games, events, and moments that defined OneLast.</li>
+                <li><strong>Keeping in mind our legacy</strong>: We try to .</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Our Mission</h2>
+    <h2>Looking Ahead</h2>
+    <div class="image-text-section">
+        <div class="text">
+            <p>The spirit of innovation never stops, and neither do we. OneLastMerch is committed to evolving alongside our community. We’re constantly exploring new ways to bring the OneLast experience into your everyday life — from exclusive collaborations to future-forward designs.</p>
+            <p>We’re driven by the passion of the community and the legacy of OneLast. Our mission is to create a space where fans can connect, express their love for the platform, and find merchandise that truly resonates with them. Every product is crafted with care, keeping in mind the same attention to detail that made OneLast a standout experience.</p>
+        </div>
+        <img src="{% static 'page_images/OneLastPresenter.jpg' %}" alt="A futuristic concept art inspired by the OneLast universe.">
+    </div>
+
+    <p>Thank you for being a part of our story.</p>
+    <p><strong>- The OneLastMerch Team</strong></p>
+{% endblock %}
