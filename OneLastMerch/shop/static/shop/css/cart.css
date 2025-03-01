@@ -1,25 +1,42 @@
 /* Styles only for the cart page */
+.cart-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #1b1b1b, #222); /* Gradient background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9); /* Shadow for depth */
+    color: white; /* White text for contrast */
+    transition: transform 0.3s; /* Smooth transition on hover */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.cart-page:hover {
+    transform: scale(1.02); /* Slight scale on hover */
+}
+
 .cart-page h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #7e57c2; /* Deep purple */
+    color: #00FFFF; /* Cyan color for the title */
     margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 255, 255, 0.2); /* Light shadow for depth */
 }
 
 .cart-page ul {
     list-style: none;
     padding: 0;
-    width: 80%;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+    backdrop-filter: blur(5px); /* Blur effect */
+    border-radius: 10px; /* Rounded corners */
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background-color: #f4f4f4; /* Light background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    overflow-y: auto; /* Allow vertical scrolling */
+    max-height: 500px; /* Limit the height of the list to avoid overflow */
 }
 
 .cart-page li {
@@ -27,72 +44,143 @@
     align-items: center;
     justify-content: space-between;
     padding: 15px 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    color: #333333; /* Dark gray text */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light border for separation */
+    color: white; /* White text */
+    transition: all 0.3s ease; /* Smooth transition */
+    gap: 10px; /* Space between elements */
 }
 
 .cart-page li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.cart-page li:hover {
+    background: rgba(255, 255, 255, 0.05); /* Light hover effect */
+    transform: scale(1.02); /* Slight scale on hover */
 }
 
 .cart-page img {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    width: 80px; /* Fixed width for images */
+    height: 80px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
 }
 
 .cart-page img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Image enlargement on hover */
 }
 
 .cart-page a {
     display: block;
     text-align: center;
     padding: 12px 25px;
-    background: #4db6ac; /* Light teal */
+    background: linear-gradient(145deg, #38bdf8, #0ea5e9); /* Gradient background */
     color: white;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Rounded button */
     margin-top: 20px;
     transition: all 0.3s ease-in-out;
     font-size: 16px;
+    box-shadow: 0 4px 8px rgba(56, 191, 248, 0.3), 0 0 20px rgba(56, 191, 248, 0.5); /* Glow effect */
+    width: fit-content;
+    margin-left: auto; /* Align to the right */
+    margin-right: 0; /* Align to the right */
 }
 
 .cart-page a:hover {
-    background: #00796b; /* Darker teal on hover */
-    transform: scale(1.05);
+    background: linear-gradient(145deg, #0ea5e9, #38bdf8); /* Gradient hover effect */
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 6px 12px rgba(56, 191, 248, 0.4), 0 0 30px rgba(56, 191, 248, 0.7); /* Enhanced glow */
 }
 
-/* Smooth hover transition for list items */
-.cart-page li:hover {
-    background: rgba(0, 0, 0, 0.05);
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+/* Flex container for Quantity and Remove buttons together */
+.cart-page li .button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end; /* Align buttons to the right */
+    gap: 5px; /* Space between the buttons */
+    width: 100%; /* Ensure the container takes up full width */
+    justify-content: center;
+    padding: 0; /* Remove padding inside button container */
 }
 
+/* Quantity Buttons Container */
+.quantity-container {
+    display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    width: 100%;
+}
+
+/* Quantity Buttons */
 .quantity-btn {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
+    background: linear-gradient(145deg, #38bdf8, #0ea5e9); /* Gradient background */
+    border: none;
+    padding: 5px 15px;
     cursor: pointer;
     font-size: 14px;
+    color: white;
+    border-radius: 50px; /* Rounded buttons */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(56, 191, 248, 0.3), 0 0 20px rgba(56, 191, 248, 0.5); /* Glow effect */
+    width: 50px; /* Fixed width for buttons */
+    text-align: center;
 }
 
 .quantity-btn:hover {
-    background-color: #ddd;
+    background: linear-gradient(145deg, #0ea5e9, #38bdf8); /* Gradient hover effect */
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 6px 12px rgba(56, 191, 248, 0.4), 0 0 30px rgba(56, 191, 248, 0.7); /* Enhanced glow */
 }
 
+/* Remove Button */
 .remove-btn {
-    background-color: #ff4d4d;
-    color: white;
+    background: linear-gradient(145deg, #ff4d4d, #cc0000); /* Gradient background */
     border: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
     cursor: pointer;
     font-size: 14px;
+    color: white;
+    border-radius: 50px; /* Rounded buttons */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 77, 77, 0.3), 0 0 20px rgba(255, 77, 77, 0.5); /* Glow effect */
+    width: 100px; /* Fixed width for buttons */
+    text-align: center;
 }
 
 .remove-btn:hover {
-    background-color: #cc0000;
+    background: linear-gradient(145deg, #cc0000, #ff4d4d); /* Gradient hover effect */
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 6px 12px rgba(255, 77, 77, 0.4), 0 0 30px rgba(255, 77, 77, 0.7); /* Enhanced glow */
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .cart-page {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .cart-page h1 {
+        font-size: 2rem; /* Smaller font for smaller screens */
+    }
+
+    .cart-page a {
+        font-size: 14px; /* Adjust button size */
+    }
+
+    .cart-page li {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .quantity-container {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+    }
 }

@@ -11,19 +11,24 @@
                 <img src="{% static 'items_images/'|add:cart_item.image %}" alt="{{ cart_item.title }}" width="50">
                 {{ cart_item.title }} - ${{ cart_item.price }} 
                 
-                <!-- Quantity adjustment form -->
-                <form action="{% url 'update_cart_item_quantity' cart_item.id %}" method="POST" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit" name="action" value="decrease" class="quantity-btn">-</button>
-                    <span>{{ cart_item.quantity }}</span>
-                    <button type="submit" name="action" value="increase" class="quantity-btn">+</button>
-                </form>
+                <!-- Button Container -->
+                <div class="button-container">
+                    <!-- Quantity adjustment form -->
+                    <form action="{% url 'update_cart_item_quantity' cart_item.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <div class="quantity-container">
+                            <button type="submit" name="action" value="decrease" class="quantity-btn">-</button>
+                            <span>{{ cart_item.quantity }}</span>
+                            <button type="submit" name="action" value="increase" class="quantity-btn">+</button>
+                        </div>
+                    </form>
 
-                <!-- Remove from Cart button -->
-                <form action="{% url 'remove_from_cart' cart_item.id %}" method="POST" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="remove-btn">Remove</button>
-                </form>
+                    <!-- Remove from Cart button -->
+                    <form action="{% url 'remove_from_cart' cart_item.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="remove-btn">Remove</button>
+                    </form>
+                </div>
             </li>
         {% empty %}
             <li>Your cart is empty.</li>
