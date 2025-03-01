@@ -3,4 +3,4 @@
 *.pyc
 .idea/
 .vscode/
-./OneLastMerch/db.sqlite3
+OneLastMerch/db.sqlite3
