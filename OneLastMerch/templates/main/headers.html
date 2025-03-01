@@ -1,9 +1,9 @@
 <li><a href="/">HOME</a></li>
 <li><a href="/shop">SHOP</a></li>
-<li><a href="/usr/about-us">ABOUT US</a></li>
-<li><a href="/usr/contact">CONTACT</a></li>
+<li><a href="/about-us">ABOUT US</a></li>
+<li><a href="/contact">CONTACT</a></li>
 {% if user.is_authenticated %}
-<li><a href="/usr/account">ACCOUNT</a></li>
+<li><a href="/account">ACCOUNT</a></li>
 {% else %}
 <li><a href="/auth/login">LOGIN</a></li>
 {% endif %}

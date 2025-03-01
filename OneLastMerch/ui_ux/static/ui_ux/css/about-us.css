@@ -1,30 +1,206 @@
+/* General Styles */
+.about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-us-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1b1b1b;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideInFromTop 1s ease-in-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-us-container h2 {
+    font-size: 2rem;
+    color: #1b1b1b;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-in-out 0.5s forwards;
+    opacity: 0;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out 0.8s forwards;
+    opacity: 0;
+}
+
+/* Image and Text Section */
 .image-text-section {
     display: flex;
     align-items: center;
-    margin: 2rem 0;
-    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+}
+
+.image-text-section.reverse {
+    flex-direction: row-reverse;
 }
 
 .image-text-section img {
-    border-radius: 8px;
-    flex: 1 1 70%; /* Adjusted to take 50% of the container */
-    max-width: 70%; /* Ensure the image doesn't exceed its flex-basis */
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-text-section img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .image-text-section .text {
-    flex: 1 1 30%;
-    max-width: 30%;
-    padding: 1rem;
+    width: 50%;
+    opacity: 0;
+    animation: slideInFromLeft 1s ease-in-out 1.2s forwards;
 }
 
-.cta {
-    text-align: center;
-    margin: 2rem 0;
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
-.cta a {
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    background-color: #282c34;
-    color: white;
-    border-radius: 4px;
+
+.image-text-section.reverse .text {
+    animation: slideInFromRight 1s ease-in-out 1.2s forwards;
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.image-text-section .text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.image-text-section .text ul li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.image-text-section .text ul li strong {
+    color: #1b1b1b;
+}
+
+/* Mission Section */
+.mission-section {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1.4s forwards;
+}
+
+.mission-section p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Closing Section */
+.closing-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1.6s forwards;
+}
+
+.closing-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.closing-section strong {
+    color: #1b1b1b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-text-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-text-section img,
+    .image-text-section .text {
+        width: 100%;
+    }
+
+    .about-us-container h1 {
+        font-size: 2rem;
+    }
+
+    .about-us-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .image-text-section .text ul li {
+        font-size: 1rem;
+    }
+
+    .mission-section p {
+        font-size: 1rem;
+    }
+
+    .closing-section p {
+        font-size: 1rem;
+    }
 }

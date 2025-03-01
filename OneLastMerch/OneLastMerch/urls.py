@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('olm_auth.urls')),
     path('shop/', include('shop.urls')),
-    path('usr/', include('ui_ux.urls')),
+    path('', include('ui_ux.urls')),
     path('', index)
 ]

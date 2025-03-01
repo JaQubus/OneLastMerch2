@@ -1,31 +1,46 @@
-{% extends 'base/index.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'ui/css/about-us.css' %}">
-    <h2>What We Do</h2>
-    <div class="image-text-section">
-        <img src="{% static 'page_images/OneLast.png' %}" alt="An image of stylish OneLastMerch apparel and accessories.">
-        <div class="text">
-            <ul>
-                <li><strong>Apparel</strong>: Stylish and comfortable clothing inspired by the themes of OneLast.</li>
-                <li><strong>Accessories</strong>: Cool collectibles and functional items that let you carry a piece of the platform wherever you go.</li>
-                <li><strong>Exclusive Drops</strong>: Limited-edition items tied to the games, events, and moments that defined OneLast.</li>
-                <li><strong>Keeping in mind our legacy</strong>: We try to .</li>
-            </ul>
-        </div>
-    </div>
+    <link rel="stylesheet" href="{% static 'ui_ux/css/about-us.css' %}">
+    
+    <div class="about-us-container">
+        <section class="about-section">
+            <h2>What We Do</h2>
+            <div class="image-text-section">
+                <img src="{% static 'page_images/OneLast.png' %}" alt="An image of stylish OneLastMerch apparel and accessories." class="about-image">
+                <div class="text">
+                    <ul>
+                        <li><strong>Apparel</strong>: Stylish and comfortable clothing inspired by the themes of OneLast.</li>
+                        <li><strong>Accessories</strong>: Cool collectibles and functional items that let you carry a piece of the platform wherever you go.</li>
+                        <li><strong>Exclusive Drops</strong>: Limited-edition items tied to the games, events, and moments that defined OneLast.</li>
+                        <li><strong>Keeping in Mind Our Legacy</strong>: We aim to uphold the legacy of OneLast by delivering high-quality merchandise that represents the community.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <h2>Our Mission</h2>
-    <h2>Looking Ahead</h2>
-    <div class="image-text-section">
-        <div class="text">
-            <p>The spirit of innovation never stops, and neither do we. OneLastMerch is committed to evolving alongside our community. We’re constantly exploring new ways to bring the OneLast experience into your everyday life — from exclusive collaborations to future-forward designs.</p>
-            <p>We’re driven by the passion of the community and the legacy of OneLast. Our mission is to create a space where fans can connect, express their love for the platform, and find merchandise that truly resonates with them. Every product is crafted with care, keeping in mind the same attention to detail that made OneLast a standout experience.</p>
-        </div>
-        <img src="{% static 'page_images/OneLastPresenter.jpg' %}" alt="A futuristic concept art inspired by the OneLast universe.">
-    </div>
+        <section class="about-section mission">
+            <h2>Our Mission</h2>
+            <div class="text">
+                <p>The spirit of innovation never stops, and neither do we. OneLastMerch is committed to evolving alongside our community. We’re constantly exploring new ways to bring the OneLast experience into your everyday life — from exclusive collaborations to future-forward designs.</p>
+                <p>We’re driven by the passion of the community and the legacy of OneLast. Our mission is to create a space where fans can connect, express their love for the platform, and find merchandise that truly resonates with them. Every product is crafted with care, keeping in mind the same attention to detail that made OneLast a standout experience.</p>
+            </div>
+        </section>
 
-    <p>Thank you for being a part of our story.</p>
-    <p><strong>- The OneLastMerch Team</strong></p>
+        <section class="about-section looking-ahead">
+            <h2>Looking Ahead</h2>
+            <div class="image-text-section">
+                <div class="text">
+                    <p>As we look forward, we envision a future where OneLastMerch continues to be a key part of the OneLast experience. Whether it's collaborating with other creators, introducing new product lines, or exploring innovative design concepts, we are dedicated to staying ahead of the curve and bringing our community along with us.</p>
+                </div>
+                <img src="{% static 'page_images/OneLastPresenter.jpg' %}" alt="A futuristic concept art inspired by the OneLast universe." class="about-image">
+            </div>
+        </section>
+
+        <footer class="thank-you">
+            <p>Thank you for being a part of our story.</p>
+            <p><strong>- The OneLastMerch Team</strong></p>
+        </footer>
+    </div>
 {% endblock %}

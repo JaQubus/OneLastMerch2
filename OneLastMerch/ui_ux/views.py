@@ -9,3 +9,6 @@ def account(request):
         "email": request.user.email,
     }
     return render(request, 'ui_ux/account.html', context=context)  # Render the account page with user data
+
+def about_us(request):
+    return render(request, 'ui_ux/about-us.html')
