@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="image-detail-container">
+    <h1>{{ item.title }}</h1>
+    <p>{{ item.image }}</p>
+    {% if item.image %}
+        <img src="{% static 'items_images/'|add:item.image %}" alt="{{ item.title }}" class="item-image">
+    {% endif %}
+    <p>Price: ${{ item.price }}</p>
+    <a href="{% url 'shop_main' %}">Back to items</a>
+</div>
+{% endblock content %}

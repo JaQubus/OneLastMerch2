@@ -7,13 +7,21 @@
     <div class="items-container">
         {% for item in items %}
             <link rel="stylesheet" href="{% static 'shop/css/shop.css' %}">
-                <div class="item">
-                    {% if item.image %}
+            <div class="item">
+                {% if item.image %}
+                    {% if item.id %}
+                        <a href="{% url 'show_image' item.id %}">
+                    {% else %}
+                        <span>No ID available</span>
+                    {% endif %}
                         <img src="{% static 'items_images/'|add:item.image %}" alt="{{ item.title }}" class="item-image">
                         <h1 class="image-title">{{ item.title }}</h1>
                         <p class="item-price">${{ item.price }}</p>
+                    {% if item.id %}
+                        </a>
                     {% endif %}
-                </div>
+                {% endif %}
+            </div>
         {% endfor %}
     </div>
 {% endif %}
