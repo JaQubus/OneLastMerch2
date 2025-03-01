@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'shop/css/image_detail.css' %}">
 <div class="image-detail-container">
     <h1>{{ item.title }}</h1>
-    <p>{{ item.image }}</p>
     {% if item.image %}
         <img src="{% static 'items_images/'|add:item.image %}" alt="{{ item.title }}" class="item-image">
     {% endif %}

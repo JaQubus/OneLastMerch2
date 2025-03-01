@@ -1,0 +1,71 @@
+.image-detail-container {
+    max-width: 600px;
+    margin: auto; /* Center the container */
+    background: linear-gradient(135deg, #1b1b1b, #222); /* Gradient background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9); /* Shadow for depth */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s; /* Smooth transition on hover */
+    color: white;
+}
+
+.image-detail-container:hover {
+    transform: scale(1.02);
+}
+
+/* Title Styles */
+.image-detail-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 255, 255, 0.2); /* Light shadow for depth */
+}
+
+/* Image Styles */
+.item-image {
+    max-width: 100%; /* Responsive image width */
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the image */
+    transition: transform 0.3s;
+}
+
+.item-image:hover {
+    transform: scale(1.05); /* Image enlargement on hover */
+}
+
+/* Price and Back Link Styles */
+p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #00FFFF; /* Cyan color for links */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #FF00FF;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .image-detail-container {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .image-detail-container h1 {
+        font-size: 2em; /* Smaller font for smaller screens */
+    }
+
+    p {
+        font-size: 1.2em; /* Adjust price size */
+    }
+
+    a {
+        font-size: 1em; /* Adjust back link size */
+    }
+}
