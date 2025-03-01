@@ -1,0 +1,34 @@
+/* Style for the shopping cart icon */
+.cart-icon {
+    position: fixed; /* Fix it to the bottom-right */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #38bdf8; /* Background color for the cart */
+    color: white; /* White color for the icon */
+    padding: 15px; /* Padding around the icon */
+    border-radius: 50%; /* Circular icon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for effect */
+    font-size: 24px; /* Icon size */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    z-index: 1000; /* Make sure it's on top of other elements */
+}
+
+.cart-icon:hover {
+    background-color: #0ea5e9; /* Change the background color on hover */
+}
+
+/* Cart count (number of items in the cart) */
+.cart-icon .cart-count {
+    position: absolute; /* Position it relative to the icon */
+    top: -5px; /* Position it slightly above */
+    right: -5px; /* Position it slightly to the right */
+    background-color: red; /* Red background for the number */
+    color: white; /* White text color */
+    border-radius: 50%; /* Circular shape for the number */
+    padding: 5px 10px; /* Padding around the number */
+    font-size: 14px; /* Font size for the number */
+    font-weight: bold; /* Bold number */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

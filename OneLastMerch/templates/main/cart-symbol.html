@@ -1,0 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/cart-symbol.css' %}" />
+<a href="{% url 'view_cart' %}" class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">{{ cart_item_count }}</span> <!-- This will be dynamically updated with the number of items -->
+</a>
