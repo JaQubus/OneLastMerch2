@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load custom_filters %}  <!-- Load the custom filter -->
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'ui_ux/css/wheel.css' %}">
@@ -10,6 +11,11 @@
     <div class="wheel-wrapper">
         <div class="wheel" id="wheel">
             <!-- Wheel slices will be dynamically inserted here -->
+            {% for prize in prizes %}
+                <div class="wheel-segment" style="transform: rotate({{ forloop.counter0|multiply:segment_angle }}deg);">
+                    {{ prize.name }}
+                </div>
+            {% endfor %}
         </div>
         <div class="wheel-arrow"></div>
     </div>
