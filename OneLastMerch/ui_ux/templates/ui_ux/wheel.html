@@ -11,7 +11,7 @@
     <div class="wheel-wrapper">
         <div class="wheel" id="wheel">
             {% for prize in prizes %}
-                <div class="wheel-segment" style="transform: rotate({{ forloop.counter0|multiply:segment_angle }}deg);">
+                <div class="wheel-segment" style="--segment-index: {{ forloop.counter0 }}; transform: rotate({{ forloop.counter0|multiply:segment_angle }}deg);">
                     <div class="segment-content">
                         {{ prize.name }}
                     </div>

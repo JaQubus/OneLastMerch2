@@ -4,17 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultMessage = document.getElementById('result-message');
     let isSpinning = false;
 
-    // Generate dynamic conic-gradient for the wheel
+    // Get all the segments and calculate the angle for each segment
     const segments = document.querySelectorAll('.wheel-segment');
     const segmentCount = segments.length;
 
     if (segmentCount > 0) {
         const colors = [
             '#ff9f43', '#feca57', '#ff6b6b', '#ee5253', '#54a0ff', '#2e86de', '#1dd1a1', '#10ac84', '#5f27cd', '#341f97'
-        ]; // Add more colors if needed
+        ]; // Color array for segments
         const gradientStops = [];
         const angleIncrement = 360 / segmentCount;
 
+        // Create a dynamic conic gradient for the wheel segments
         for (let i = 0; i < segmentCount; i++) {
             const startAngle = angleIncrement * i;
             const endAngle = angleIncrement * (i + 1);
@@ -25,12 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
         wheel.style.background = `conic-gradient(${gradientStops.join(', ')})`;
     }
 
-    // Rotate segment content to center text
+    // Rotate the segment content and position it correctly
     const segmentAngle = 360 / segmentCount;
     segments.forEach((segment, index) => {
         const content = segment.querySelector('.segment-content');
         if (content) {
-            content.style.transform = `rotate(${segmentAngle / 2}deg)`; // Rotate content to center it
+            const rotation = (index * segmentAngle) + (segmentAngle / 2);  // Adjust rotation for proper alignment
+            content.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`; // Rotate the content to keep the text upright
         }
     });
 
