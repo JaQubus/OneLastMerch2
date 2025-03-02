@@ -1,0 +1,74 @@
+/* Spin Container */
+.spin-container {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Wheel Wrapper */
+.wheel-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+/* Wheel */
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 4s ease-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: conic-gradient(
+        from 0deg,
+        #ffcc00 0% 16.66%,
+        #ff9900 16.66% 33.33%,
+        #ffcc00 33.33% 50%,
+        #ff9900 50% 66.66%,
+        #ffcc00 66.66% 83.33%,
+        #ff9900 83.33% 100%
+    );
+}
+
+/* Wheel Arrow */
+.wheel-arrow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid red;
+    z-index: 2;
+}
+
+/* Spin Button */
+#spin-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: #ff9900;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+#spin-btn:hover {
+    background: #ff6600;
+}
+
+/* Result Message */
+#result-message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}

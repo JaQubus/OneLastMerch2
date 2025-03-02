@@ -1,10 +1,78 @@
-
-#id_tags {
-    display: flex;
-    flex-direction: row;
-    padding: 1em;
-    font-size: 1.25em
+/* Styles specific to the shop filters form */
+.shop-filters {
+    max-width: 100%; /* Allow the form to take full width */
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Make the form a flex container */
+    align-items: center; /* Vertically center the form elements */
+    gap: 10px; /* Add spacing between form elements */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
-.form>label {
-    font-size: 1.5em;
+
+.shop-filters label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px; /* Add spacing between label and input */
+}
+
+.shop-filters input,
+.shop-filters select,
+.shop-filters textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1; /* Allow inputs to grow and fill available space */
+    min-width: 120px; /* Ensure inputs don't get too small */
+}
+
+.shop-filters button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+.shop-filters button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styling */
+.shop-filters .form-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .shop-filters {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: stretch; /* Stretch inputs to full width */
+    }
+
+    .shop-filters label {
+        margin-right: 0; /* Remove margin for stacked layout */
+        margin-bottom: 5px; /* Add spacing below labels */
+    }
+
+    .shop-filters input,
+    .shop-filters select,
+    .shop-filters textarea {
+        width: 100%; /* Full width for stacked layout */
+        margin-bottom: 10px; /* Add spacing between stacked inputs */
+    }
+
+    .shop-filters button {
+        width: 100%; /* Full width for stacked layout */
+    }
 }
