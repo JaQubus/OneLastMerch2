@@ -6,19 +6,33 @@
     <form method="POST" action="{% url 'register' %}" class="form">
         <h2>Register</h2>
         {% csrf_token %}
+
+        <!-- Display non-field errors -->
+        {% if form.non_field_errors %}
+            <div class="form-error">
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Display field-specific errors -->
         {% for field in form %}
-            {% if field.errors%}
+            <div class="form-group">
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                 {{ field }}
-                {% for e_field in field.errors %}
-                    <p class="form-error">{{ e_field }}</p>
-                {% endfor %}
-            {% else %}
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-            {{ field }}
-            {% endif %}
+                {% if field.errors %}
+                    <div class="form-error">
+                        {% for error in field.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
         {% endfor %}
-        <button type="submit">register</button>
+
+        <button type="submit">Register</button>
     </form>
+    <p><a href="/auth/login">Already have an account?</a></p>
 </section>
 {% endblock content %}
