@@ -1,93 +1,88 @@
-.spin-container {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+/* Container for the wheel */
+#wheel-container {
+    position: relative;
+    width: 320px; /* slightly wider to accommodate the arrow */
     margin: 50px auto;
+    text-align: center;
 }
 
-.wheel-wrapper {
+/* The wheel element: dynamic background set via JS */
+#wheel {
     position: relative;
     width: 300px;
     height: 300px;
     margin: 0 auto;
-}
-
-.wheel {
-    width: 300px;
-    height: 300px;
     border-radius: 50%;
-    position: relative;
+    border: 10px solid #4CAF50;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* will be overwritten by JS conic-gradient */
     overflow: hidden;
-    border: 5px solid #333;
     transform: rotate(0deg);
     transition: transform 3s ease-out;
 }
 
-.wheel-segment {
+/* Labels for each prize (overlaid on top of the wheel) */
+.wheel-label {
     position: absolute;
-    width: 50%;
-    height: 50%;
-    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    transform-origin: 100% 100%; /* Anchor the rotation at the segment's center */
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 
-.segment-content {
-    transform-origin: center;
-    text-align: center;
+/* Each label's span: positioned around the circumference.
+   The inline transform rotates the label outward at the correct angle,
+   then translates it up (adjust the 130px value based on your wheel radius),
+   and rotates it back to keep the text upright. */
+.wheel-label span {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg); /* Adjust to rotate and center the text */
-    padding: 5px 10px; /* Added padding for text spacing */
-    width: 90%; /* Make sure it doesn't stretch too much */
+    transform-origin: 0 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
 }
 
-.wheel-arrow {
+/* Arrow above the wheel */
+.wheel-arrow-container {
     position: absolute;
-    top: -25px; /* Move it outside the wheel */
+    top: -40px;
     left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    width: 30px;
-    height: 30px;
-    background-color: #333;
-    border-radius: 50%;
-    border: 5px solid white; /* Create a sharper outline */
+    transform: translateX(-50%);
     z-index: 10;
 }
+.wheel-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #333;
+}
 
+/* Spin button styling */
 #spin-btn {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    color: white;
+    color: #fff;
     background-color: #333;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 #spin-btn:hover {
     background-color: #555;
 }
-
 #spin-btn:disabled {
     background-color: #999;
     cursor: not-allowed;
 }
 
+/* Result message styling */
 #result-message {
     margin-top: 20px;
     font-size: 18px;

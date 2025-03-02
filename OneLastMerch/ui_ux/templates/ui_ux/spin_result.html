@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Spin Result</h1>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+<p>Congratulations, {{ result.user.username }}! You won {{ result.prize.name }} on {{ result.spin_date }}.</p>
+<a href="{% url 'spin_wheel' %}" class="btn btn-primary">Back to Wheel</a>
+{% endblock %}

@@ -1,29 +1,40 @@
 {% extends 'main/base.html' %}
 {% load static %}
-{% load custom_filters %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'ui_ux/css/wheel.css' %}">
+<link rel="stylesheet" href="{% static 'ui_ux/css/wheel.css' %}" />
+<h1>Spin the Wheel of Fortune</h1>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+{% endif %}
 
-<div class="spin-container">
-    <h1>Spin the Wheel & Win a Prize!</h1>
-    
-    <div class="wheel-wrapper">
-        <div class="wheel" id="wheel">
-            {% for prize in prizes %}
-                <div class="wheel-segment" style="--segment-index: {{ forloop.counter0 }}; transform: rotate({{ forloop.counter0|multiply:segment_angle }}deg);">
-                    <div class="segment-content">
-                        {{ prize.name }}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="wheel-arrow"></div>
-    </div>
-
-    <button id="spin-btn">SPIN</button>
-    <div id="result-message"></div>
+<div id="wheel-container">
+  <!-- The wheel element gets its dynamic conic-gradient via JS -->
+  <div id="wheel">
+    {% comment %}
+      Here we assume that in your view you calculate a mid_angle for each prize.
+      mid_angle = prize.angle + (360/total_prizes)/2.
+    {% endcomment %}
+    {% for prize in prizes %}
+      <div class="wheel-label">
+        <span style="transform: rotate({{ prize.mid_angle }}deg) translate(0, -130px) rotate(-{{ prize.mid_angle }}deg);">
+          {{ prize.name }}
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="wheel-arrow-container">
+    <div class="wheel-arrow"></div>
+  </div>
+  <button type="button" id="spin-btn" class="btn btn-primary">Spin the Wheel</button>
+  <p id="result-message"></p>
 </div>
 
+<!-- Pass the API URL to JavaScript -->
+<script>
+  var spinWheelApiUrl = "{% url 'spin_wheel_api' %}";
+</script>
 <script src="{% static 'ui_ux/js/wheel.js' %}"></script>
-{% endblock content %}
+{% endblock %}

@@ -1,10 +1,10 @@
-# models.py
 from django.db import models
 from django.contrib.auth.models import User
 
 class Prize(models.Model):
     name = models.CharField(max_length=100)
     probability = models.FloatField(help_text="Probability of winning this prize (0-1)")
+    color = models.CharField(max_length=7, default="#FF6F61")  # Hex color code
 
     def __str__(self):
         return self.name
