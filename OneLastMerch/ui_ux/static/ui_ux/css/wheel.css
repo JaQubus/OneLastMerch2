@@ -22,7 +22,6 @@
 }
 
 /* Labels for each prize */
-/* Labels for each prize */
 .wheel-label {
     position: absolute;
     width: 100%;
@@ -32,10 +31,9 @@
     transform-origin: center;
 }
 
+
 /* Each label's span */
 .wheel-label span {
-    top: 50%;
-    left: 50%;
     transform-origin: center;
     font-size: 14px;
     font-weight: bold;
@@ -44,8 +42,6 @@
     text-align: center;
     width: max-content;
 }
-
-
 
 /* Arrow above the wheel */
 .wheel-arrow-container {
