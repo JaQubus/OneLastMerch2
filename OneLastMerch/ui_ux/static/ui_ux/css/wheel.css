@@ -39,11 +39,17 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform-origin: 0 0;
+    transform-origin: center;
     font-size: 14px;
     font-weight: bold;
     color: #fff;
+    white-space: nowrap;
+    /* Add these lines */
+    transform: translate(-50%, -50%);  /* Center the span */
+    text-align: center;
+    width: max-content;
 }
+
 
 /* Arrow above the wheel */
 .wheel-arrow-container {

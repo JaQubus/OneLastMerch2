@@ -8,5 +8,5 @@
     {% endfor %}
 {% endif %}
 <p>Congratulations, {{ result.user.username }}! You won {{ result.prize.name }} on {{ result.spin_date }}.</p>
-<a href="{% url 'spin_wheel' %}" class="btn btn-primary">Back to Wheel</a>
+{% comment %} <a href="{% url 'spin_wheel' %}" class="btn btn-primary">Back to Wheel</a> {% endcomment %}
 {% endblock %}

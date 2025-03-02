@@ -19,13 +19,12 @@ def spin_wheel(request):
         return render(request, 'ui_ux/wheel.html')
 
     angle_per_prize = 360 / total_prizes
-    # Add angle attribute for template display
     for index, prize in enumerate(prizes):
         prize.angle = index * angle_per_prize
+        prize.mid_angle = prize.angle + (angle_per_prize / 2)  # Midpoint of segment
+        prize.text_rotation = 90 - prize.mid_angle  # Pre-calculate rotation for text
 
-    return render(request, 'ui_ux/wheel.html', {
-        'prizes': prizes,
-    })
+    return render(request, 'ui_ux/wheel.html', {'prizes': prizes})
 
 @login_required
 def spin_wheel_api(request):

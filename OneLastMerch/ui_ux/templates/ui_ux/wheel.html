@@ -18,12 +18,16 @@
       mid_angle = prize.angle + (360/total_prizes)/2.
     {% endcomment %}
     {% for prize in prizes %}
-      <div class="wheel-label">
-        <span style="transform: rotate({{ prize.mid_angle|add:"-90" }}deg) translate(0, -130px) rotate(-{{ prize.mid_angle|add:"-90" }}deg);">
-            {{ prize.name }}
-        </span>          
-      </div>
-    {% endfor %}
+        <div class="wheel-label">
+            <span style="transform: 
+                rotate({{ prize.mid_angle|add:"-90" }}deg)  /* Position label */
+                translateY(-130px)  /* Move to edge */
+                rotate({{ prize.text_rotation }}deg);  /* Keep text upright */
+            ">
+                {{ prize.name }}
+            </span>                
+        </div>
+  {% endfor %}
   </div>
   <div class="wheel-arrow-container">
     <div class="wheel-arrow"></div>
