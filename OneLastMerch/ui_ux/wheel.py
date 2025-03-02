@@ -22,7 +22,6 @@ def spin_wheel(request):
     for index, prize in enumerate(prizes):
         prize.angle = index * angle_per_prize
         prize.mid_angle = prize.angle + (angle_per_prize / 2)  # Midpoint of segment
-        prize.text_rotation = 90 - prize.mid_angle  # Pre-calculate rotation for text
 
     return render(request, 'ui_ux/wheel.html', {'prizes': prizes})
 
