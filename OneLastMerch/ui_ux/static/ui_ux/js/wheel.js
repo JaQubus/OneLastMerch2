@@ -4,6 +4,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const resultMessage = document.getElementById('result-message');
     let isSpinning = false;
 
+    // Generate dynamic conic-gradient for the wheel
+    const segments = document.querySelectorAll('.wheel-segment');
+    const segmentCount = segments.length;
+
+    if (segmentCount > 0) {
+        const colors = [
+            '#ff9f43', '#feca57', '#ff6b6b', '#ee5253', '#54a0ff', '#2e86de', '#1dd1a1', '#10ac84', '#5f27cd', '#341f97'
+        ]; // Add more colors if needed
+        const gradientStops = [];
+        const angleIncrement = 360 / segmentCount;
+
+        for (let i = 0; i < segmentCount; i++) {
+            const startAngle = angleIncrement * i;
+            const endAngle = angleIncrement * (i + 1);
+            const color = colors[i % colors.length]; // Cycle through colors if there are more segments than colors
+            gradientStops.push(`${color} ${startAngle}deg ${endAngle}deg`);
+        }
+
+        wheel.style.background = `conic-gradient(${gradientStops.join(', ')})`;
+    }
+
+    // Rotate segment content to center text
+    const segmentAngle = 360 / segmentCount;
+    segments.forEach((segment, index) => {
+        const content = segment.querySelector('.segment-content');
+        if (content) {
+            content.style.transform = `rotate(${segmentAngle / 2}deg)`; // Rotate content to center it
+        }
+    });
+
     // Handle spin button click
     spinButton.addEventListener('click', function () {
         if (isSpinning) return;
@@ -26,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     // Calculate the spin animation degrees
                     const prizeIndex = data.prize_index;
-                    const totalSegments = document.querySelectorAll('.wheel-segment').length;
+                    const totalSegments = segments.length;
                     const degrees = 360 * 5 + (360 / totalSegments) * prizeIndex;  // Spin animation
 
                     // Apply the spin animation
@@ -41,7 +71,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 3000);  // Match animation duration
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error:', error);
+                resultMessage.textContent = 'An error occurred. Please try again.';
+                spinButton.disabled = false;
+                isSpinning = false;
+            });
     });
 
     // Function to get CSRF token from cookies
