@@ -1,0 +1,74 @@
+/* Styles specific to the home page */
+.home-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.home-container .section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.home-container .section-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Call-to-Action Buttons */
+.home-container .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-container .cta:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 15px;
+    }
+
+    .home-container h1 {
+        font-size: 2rem;
+    }
+
+    .home-container .section {
+        padding: 15px;
+    }
+
+    .home-container .section-text {
+        font-size: 1rem;
+    }
+
+    .home-container .cta {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

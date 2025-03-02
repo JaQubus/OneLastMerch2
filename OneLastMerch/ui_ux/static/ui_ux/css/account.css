@@ -1,0 +1,84 @@
+/* Styles specific to the account page */
+.account-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.account-container .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.account-container .section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.account-container .section-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.account-container .section-text strong {
+    color: #2c3e50;
+}
+
+/* Call-to-Action Buttons */
+.account-container .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.account-container .cta:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .account-container .container {
+        padding: 15px;
+    }
+
+    .account-container h1 {
+        font-size: 2rem;
+    }
+
+    .account-container .section {
+        padding: 15px;
+    }
+
+    .account-container .section-text {
+        font-size: 1rem;
+    }
+
+    .account-container .cta {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

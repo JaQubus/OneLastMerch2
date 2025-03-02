@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <section class="container">
+<link rel="stylesheet" href="{% static 'ui_ux/css/account.css' %}" />
+    <section class="account-container">
         <h1>Welcome to Your Account, {{ username }}!</h1>
 
         <div class="section">
@@ -33,4 +34,5 @@
             </p>
             <p><a href="/shop/cart" class="cta">Your cart</a></p>
         </div>
-{% endblock %}
+    </section>
+{% endblock content %}
