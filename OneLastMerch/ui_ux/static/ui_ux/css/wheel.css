@@ -54,12 +54,12 @@
     z-index: 10;
 }
 .wheel-arrow {
-    width: 0;
-    height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 30px solid #333;
+    border-top: 30px solid #333;
+    border-bottom: none;
 }
+
 
 /* Spin button styling */
 #spin-btn {

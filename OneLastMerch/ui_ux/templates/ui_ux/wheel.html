@@ -19,9 +19,9 @@
     {% endcomment %}
     {% for prize in prizes %}
       <div class="wheel-label">
-        <span style="transform: rotate({{ prize.mid_angle }}deg) translate(0, -130px) rotate(-{{ prize.mid_angle }}deg);">
-          {{ prize.name }}
-        </span>
+        <span style="transform: rotate({{ prize.mid_angle|add:"-90" }}deg) translate(0, -130px) rotate(-{{ prize.mid_angle|add:"-90" }}deg);">
+            {{ prize.name }}
+        </span>          
       </div>
     {% endfor %}
   </div>

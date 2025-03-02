@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const prizeIndex = data.prize_index;
                 const totalRotation = 360 * 5;  // Five full spins for effect
                 const rotationPerSegment = 360 / segmentCount;
-                const targetRotation = rotationPerSegment * prizeIndex;
-                const finalRotation = totalRotation + targetRotation;
+                const targetRotation = rotationPerSegment * prizeIndex + rotationPerSegment / 2;
+                const finalRotation = totalRotation + (360 - targetRotation);                
 
                 wheel.style.transform = `rotate(${finalRotation}deg)`;
                 wheel.style.transition = 'transform 3s ease-out';
