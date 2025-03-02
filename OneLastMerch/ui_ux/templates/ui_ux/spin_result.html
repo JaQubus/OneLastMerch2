@@ -1,12 +1,18 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Spin Result</h1>
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-    {% endfor %}
-{% endif %}
-<p>Congratulations, {{ result.user.username }}! You won {{ result.prize.name }} on {{ result.spin_date }}.</p>
-{% comment %} <a href="{% url 'spin_wheel' %}" class="btn btn-primary">Back to Wheel</a> {% endcomment %}
+<link rel="stylesheet" href="{% static 'ui_ux/css/spin-result.css' %}" />
+<div class="spin-result">
+    <div class="container">
+        <h1>Spin Result</h1>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <p>Congratulations, {{ result.user.username }}! You won {{ result.prize.name }} on {{ result.spin_date }}.</p>
+        {% comment %} <a href="{% url 'spin_wheel' %}" class="btn btn-primary">Back to Wheel</a> {% endcomment %}
+    </div>
+</div>
 {% endblock %}

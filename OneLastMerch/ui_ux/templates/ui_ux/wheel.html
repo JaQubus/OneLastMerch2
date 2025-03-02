@@ -18,7 +18,7 @@
       mid_angle = prize.angle + (360/total_prizes)/2.
     {% endcomment %}
     {% for prize in prizes %}
-        <div class="wheel-label" style="transform: rotate({{ prize.mid_angle }}deg) translateY(20px);">
+        <div class="wheel-label" style="transform: rotate({{ prize.mid_angle }}deg) translateY(40px);">
             <span style="transform: rotate(-{{ prize.mid_angle }}deg) translateY(-130px);">
                 {{ prize.name }}
             </span>                

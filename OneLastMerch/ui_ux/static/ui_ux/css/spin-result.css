@@ -1,0 +1,78 @@
+/* Styles specific to the spin result page */
+.spin-result {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+.spin-result .container {
+    max-width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spin-result h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.spin-result p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.spin-result .alert {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.spin-result .btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.spin-result .btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .spin-result .container {
+        padding: 20px;
+    }
+
+    .spin-result h1 {
+        font-size: 2rem;
+    }
+
+    .spin-result p {
+        font-size: 1rem;
+    }
+
+    .spin-result .btn-primary {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
